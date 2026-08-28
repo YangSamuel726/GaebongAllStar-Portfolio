@@ -20,7 +20,7 @@ GaebongAllStar는 2~10인이 함께 즐기는 온라인 PvP 액션 게임입니�
 ---
 
 ## Tech Stack
-- C# · Unity · Photon Fusion · PlayFab · Steamworks
+- C# · Unity · Photon Fusion · GitHub · PlayFab · Steamworks
 
 ---
 ## 핵심 기술 경험
