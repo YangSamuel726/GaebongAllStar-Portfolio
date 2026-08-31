@@ -1,13 +1,22 @@
 <h1 align="center">GaebongAllStar-Portfolio</h1>
 
+<p align="center"><img src="GBS Images/ApplicationFrameHost_niz8BniqSh.png" width="300"> <img src="GBS Images/explorer_hl48loQzOD.png" width="300"> </p>
+
+<p align="center">
+  <a href="https://store.steampowered.com/app/3406920/GaebongAllStar/">
+    <img src="https://img.shields.io/badge/Steam-Store-000000?logo=steam&style=for-the-badge&logoColor=white" alt="Steam">
+  </a>
+  <a href="https://youtu.be/GJ9Nbg19cho">
+    <img src="https://img.shields.io/badge/YouTube-Trailer-FF0000?logo=youtube&style=for-the-badge&logoColor=white" alt="Trailer">
+  </a>
+</p>
+<br>
+  
 ---
 ## 1. 게임 소개
 GaebongAllStar는 2~10인이 함께 즐기는 실시간 온라인 PvP 액션 게임입니다.
 각자의 캐릭터와 아이템, 맵을 활용해서 적을 모두 쓰러뜨리는 것을 목표로 하는 게임입니다.
 
-[![Steam](https://img.shields.io/badge/Steam-Store-000000?logo=steam&style=for-the-badge&logoColor=white)](https://store.steampowered.com/app/3406920/GaebongAllStar/)
-<br>
-[![Trailer](https://img.shields.io/badge/YouTube-Trailer-FF0000?logo=youtube&style=for-the-badge&logoColor=white)]()
 
 |||
 |:---:|---|
@@ -19,7 +28,7 @@ GaebongAllStar는 2~10인이 함께 즐기는 실시간 온라인 PvP 액션 게
 
 ## 2. 팀 · 역할
 - 개발 팀 : GoldTongs (인디게임 개발 팀)
-- 팀 구성 : 3명(개발자1, 아티스트2)
+- 팀 구성 : 3명(**개발자1**, 아티스트2)
 - 담당 역할 : Unity 클라이언트 개발 전담
 
 ---
