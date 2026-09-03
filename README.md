@@ -29,7 +29,11 @@ GaebongAllStar는 2~10인이 함께 즐기는 실시간 온라인 PvP 액션 게
 ## 2. 팀 · 역할
 - 개발 팀 : GoldTongs (인디게임 개발 팀)
 - 팀 구성 : 3명(**개발자1**, 아티스트2)
-- 담당 역할 : Unity 클라이언트 개발 전담
+- 담당 역할 : Unity 클라이언트 개발 전담<br>
+&emsp; - Photon Fusion 기반 로비 · 인게임 네트워크 <br>
+&emsp; - 캐릭터 전투와 상태 시스템<br>
+&emsp; - Steamworks · PlayFab 연동<br>
+&emsp; - UI · Animation
 
 ---
 
