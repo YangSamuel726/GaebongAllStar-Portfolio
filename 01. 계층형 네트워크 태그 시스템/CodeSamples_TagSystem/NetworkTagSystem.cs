@@ -198,7 +198,7 @@ public class NetworkTagSystem : NetworkBehaviour
             catch (Exception ex)
             {
                 Debug.LogError(
-                    $"[NetworkTagSystem] 태그 {tag} 추가 이벤트 실패\n" +
+                    $"[NetworkTagSystem] 태그 {tagId} 추가 이벤트 실패\n" +
                     $"콜백: {callback.Method.DeclaringType?.Name}.{callback.Method.Name}"
                 );
 
@@ -223,7 +223,7 @@ public class NetworkTagSystem : NetworkBehaviour
             catch (Exception ex)
             {
                 Debug.LogError(
-                    $"[NetworkTagSystem] 태그 {tag} 제거 이벤트 실패\n" +
+                    $"[NetworkTagSystem] 태그 {tagId} 제거 이벤트 실패\n" +
                     $"콜백: {callback.Method.DeclaringType?.Name}.{callback.Method.Name}"
                 );
 
