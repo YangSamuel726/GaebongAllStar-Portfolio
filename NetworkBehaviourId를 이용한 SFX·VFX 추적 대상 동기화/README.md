@@ -4,8 +4,8 @@
 ### 1. 요구 사항
 - 이 프로젝트의 SFX/VFX는 `NetworkBuffer`를 통해 재생 요청을 전달하고, 각 클라이언트에서 로컬 객체로 재생하는 구조입니다.
 고정된 위치에서 재생하는 이펙트는 요청에 월드 좌표를 포함하면 됩니다. 그러나 캐릭터나 무기를 따라다니는 이펙트는 재생을 시작한 이후에도 대상의 이동을 따라가야 합니다.
-- 예를 들어 아래 이미지와 같이 무기에 힘을 모으는 차징 이펙트는 무기가 움직여도 무기에 붙어 있어야 합니다. 재생 시작 시점의 좌표만 전달하면, 대상이 이동했을 때 이펙트는 처음 위치에 남게 됩니다.
-<img src="./VFX·SFX_LocalSync/Leproxy_Charge.gif" width="500">
+- 예를 들어 아래 이미지와 같이 무기에 힘을 모으는 차징 이펙트는 무기가 움직여도 무기에 붙어 있어야 합니다. 재생 시작 시점의 좌표만 전달하면, 대상이 이동했을 때 이펙트는 처음 위치에 남게 됩니다.<br>
+&nbsp;<img src="./VFX·SFX_LocalSync/Leproxy_Charge.gif" width="500">
 
 - 이를 위해 재생 요청에 어디에서 재생할지뿐 아니라, 어떤 대상을 계속 따라갈지를 표현할 수 있어야 했습니다.
 
@@ -17,10 +17,17 @@
 
 ```csharp
 // 특정 월드 위치에 고정으로 SFX 재생을 요청하는 함수
-public SFXRequestHandle RequestPlayEffect(NetworkBehaviourId firstRequester, NetworkBehaviourId secondRequester, int effectId, Vector3 startPos)
+public SFXRequestHandle RequestPlayEffect(NetworkBehaviourId firstRequester, 
+                                          NetworkBehaviourId secondRequester, 
+                                          int effectId, 
+                                          Vector3 startPos)
 
 // 네트워크 객체를 참조하여 SFX 재생을 요청하는 함수
-public SFXRequestHandle RequestPlayEffect(NetworkBehaviourId firstRequester, NetworkBehaviourId secondRequester, int effectId, NetworkBehaviourId startPosTarget, ETargetParentingType targetParentingType)
+public SFXRequestHandle RequestPlayEffect(NetworkBehaviourId firstRequester,
+                                          NetworkBehaviourId secondRequester,
+                                          int effectId,
+                                          NetworkBehaviourId startPosTarget,
+                                          ETargetParentingType targetParentingType)
 ```
 
 #### ID로 로컬 대상을 조회
@@ -57,6 +64,7 @@ public bool TryGetLocationTransform(NetworkBehaviourId locationId, out Transform
         transform = location.transform;
         return true;
     }
+    return false;
 }
 ```
 
@@ -65,10 +73,11 @@ public bool TryGetLocationTransform(NetworkBehaviourId locationId, out Transform
 
 - 각 클라이언트가 같은 ID에 대응하는 대상을 찾아 연결하므로, 로컬 이펙트는 각 화면에서 해당 캐릭터나 무기의 이동을 따라갑니다. 이펙트 자체의 위치를 계속 동기화하는 대신, 추적 대상의 이동을 활용하는 구조입니다.
 
-(공란: 동일한 대상 ID가 클라이언트 A·B의 대상 객체로 연결되는 다이어그램)
 
-#### 결과 이미지
-<img src="./VFX·SFX_LocalSync/Leproxy_Charge_Sync.gif" width="800">
+### 3. 결과 이미지
+&nbsp;<img src="./VFX·SFX_LocalSync/Leproxy_Charge_Sync.gif" width="800"><br>
+&nbsp;(서로 다른 클라이언트에서 동일한 캐릭터의 무기에 차징 이펙트가 연결되는 모습)
+
 
 ### 4. 한계 및 회고
 - 이 구조는 이펙트의 추적 대상을 일치시키지만, 모든 클라이언트의 월드 좌표를 같은 순간에 완전히 일치시키지는 않습니다. 이펙트가 따라가는 움직임은 대상 객체의 위치 동기화와 각 클라이언트의 표시 상태에 영향을 받습니다.
