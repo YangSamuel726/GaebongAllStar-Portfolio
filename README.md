@@ -47,7 +47,13 @@ GaebongAllStar는 2~10인이 함께 즐기는 실시간 온라인 PvP 액션 게
 
 ---
 ## 4. 핵심 기술 경험
-[![Video Label](https://youtu.be/d4LPapnxcG4)
+<a href="https://youtu.be/d4LPapnxcG4">
+  <img
+    src="https://img.youtube.com/vi/d4LPapnxcG4/hqdefault.jpg"
+    alt="투사체 비교 영상"
+    width="400"
+  />
+</a>
 
 #### 01. 계층형 네트워크 태그 시스템
 > Ability / Effect / Tag 기반으로 캐릭터와 스킬 확장을 고려한 전투 구조를 설계했습니다.
